@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Biniyam Safayo — Digital Courses &amp; Ebooks</title>
+<meta name="description" content="Digital courses and ebooks by Biniyam Safayo. The Extreme Path, The Architecture of the Inevitable, and The Inevitable Self — no motivation hype. Architecture, psychology, and practice." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0b0d10;
+    --bg-2:#11141a;
+    --bg-3:#171b23;
+    --line:#262c37;
+    --text:#e9e6e0;
+    --muted:#9aa3af;
+    --accent:#c9a24b;
+    --accent-dark:#a8823a;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;letter-spacing:.02em;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:28px;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{background:var(--accent);color:#0b0d10;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:9px 18px;border-radius:4px;transition:background .2s;}
+  .nav-cta:hover{background:var(--accent-dark);}
+  @media(max-width:720px){.nav-links{display:none;}}
+
+  /* HERO */
+  header.hero{padding:110px 0 90px;text-align:center;background:radial-gradient(900px 500px at 50% -10%,#1b2130 0%,var(--bg) 60%);}
+  .eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:22px;}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.12;max-width:16ch;margin:0 auto 26px;}
+  h1 em{font-style:italic;color:var(--accent);}
+  .hero-sub{color:var(--muted);max-width:60ch;margin:0 auto 38px;font-size:1.08rem;}
+  .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px 30px;border-radius:4px;transition:.2s;}
+  .btn-primary{background:var(--accent);color:#0b0d10;}
+  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .hero-quote{margin-top:64px;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--muted);max-width:34ch;margin-left:auto;margin-right:auto;}
+  .hero-quote strong{color:var(--text);font-weight:600;}
+
+  /* SECTION HEADERS */
+  section{padding:88px 0;}
+  .sec-head{text-align:center;max-width:64ch;margin:0 auto 56px;}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;margin-bottom:14px;}
+  .sec-head p{color:var(--muted);}
+
+  /* PRODUCTS */
+  #products{background:var(--bg-2);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:960px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:36px 30px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;}
+  .card:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,162,75,.4);padding:5px 10px;border-radius:3px;margin-bottom:18px;align-self:flex-start;}
+  .card h3{font-family:var(--serif);font-size:1.55rem;font-weight:600;line-height:1.2;margin-bottom:8px;}
+  .card .tag{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .card p.desc{color:var(--muted);font-size:.95rem;margin-bottom:20px;}
+  .features{list-style:none;margin-bottom:24px;flex-grow:1;}
+  .features li{font-size:.9rem;color:var(--text);padding:7px 0 7px 24px;position:relative;border-top:1px dashed var(--line);}
+  .features li:first-child{border-top:none;}
+  .features li::before{content:"◆";position:absolute;left:0;color:var(--accent);font-size:.7rem;top:10px;}
+  .price-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;}
+  .price{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--text);}
+  .price small{font-size:.8rem;color:var(--muted);font-weight:400;font-family:var(--sans);}
+  .card .btn{text-align:center;}
+
+  /* MODULE LIST INSIDE EXTREME PATH */
+  details{margin-top:18px;font-size:.85rem;color:var(--muted);}
+  details summary{cursor:pointer;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;font-size:.72rem;font-weight:600;list-style:none;}
+  details summary::before{content:"+ ";color:var(--accent);}
+  details[open] summary::before{content:"– ";}
+  details ol{padding:10px 0 0 18px;line-height:1.9;color:var(--muted);}
+
+  /* PHILOSOPHY */
+  #philosophy{background:var(--bg);}
+  .phil-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  @media(max-width:860px){.phil-grid{grid-template-columns:1fr;}}
+  .phil-copy h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.3rem);font-weight:600;margin-bottom:20px;}
+  .phil-copy h2 em{color:var(--accent);font-style:italic;}
+  .phil-copy p{color:var(--muted);margin-bottom:16px;}
+  .phil-copy .lead{color:var(--text);font-size:1.05rem;}
+  .phil-list{list-style:none;display:grid;gap:12px;}
+  .phil-list li{background:var(--bg-3);border:1px solid var(--line);border-radius:8px;padding:16px 18px;font-size:.95rem;}
+  .phil-list strong{display:block;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem;color:var(--accent);margin-bottom:4px;}
+
+  /* FAQ */
+  #faq{background:var(--bg-2);}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border:1px solid var(--line);border-radius:8px;background:var(--bg-3);margin-bottom:14px;overflow:hidden;}
+  .faq-item summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  .faq-item summary::after{content:"+";color:var(--accent);font-size:1.2rem;}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{padding:0 22px 20px;color:var(--muted);font-size:.94rem;}
+
+  /* CTA BAND */
+  .cta-band{background:linear-gradient(180deg,var(--bg) 0%,#14181f 100%);text-align:center;padding:90px 24px;}
+  .cta-band h2{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;margin-bottom:14px;}
+  .cta-band p{color:var(--muted);max-width:52ch;margin:0 auto 34px;}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:36px 0;text-align:center;color:var(--muted);font-size:.82rem;}
+  footer .brand{font-family:var(--serif);color:var(--text);font-size:1rem;margin-bottom:6px;}
+  footer a{color:var(--accent);}
+  footer a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">Biniyam <span>Safayo</span></a>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="nav-cta" href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">Buy on Gumroad</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Digital Courses &amp; Ebooks — By Biniyam Safayo</div>
+    <h1>Motivation is the weather.<br>This builds <em>the house.</em></h1>
+    <p class="hero-sub">
+      You will never command the outcome. You can command everything that makes the outcome possible.
+      These are not motivation courses. They are psychologically grounded, philosophically honest
+      systems for pursuing goals most people would call extreme — and finishing what you start.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#products">Explore the Products</a>
+      <a class="btn btn-ghost" href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">Visit the Gumroad Store</a>
+    </div>
+    <p class="hero-quote">
+      &ldquo;A house that stands in any weather — including the seasons when the wind brings nothing at all.&rdquo;<br>
+      <strong>— The Extreme Path</strong>
+    </p>
+  </div>
+</header>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The Collection</h2>
+      <p>Three complete systems — one course for the psychology of extraordinary achievement,
+         one course for aligning daily action with long-term growth, and one book that diagnoses
+         why fragmented systems fail and how to build a life that finishes.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- THE EXTREME PATH -->
+      <div class="card">
+        <span class="badge">Premium Course</span>
+        <h3>The Extreme Path</h3>
+        <div class="tag">The Psychology and Practice of Extraordinary Achievement</div>
+        <p class="desc">
+          An 8-module premium transformation program built on agency, belief, discipline, endurance,
+          and grace. Not a motivation course, not affirmations — a buildable architecture for
+          goals that take years, not weeks.
+        </p>
+        <ul class="features">
+          <li>Eight modules · one blueprint · a decade-long practice</li>
+          <li>Understand → Question → Rebuild → Practice → Adapt → Integrate</li>
+          <li>Modules on control, belief, the inner mind, self-belief, the engine, endurance, grace, and integration</li>
+          <li>Workbook &amp; final project included — The Extreme Goal Blueprint</li>
+          <li>Leaves you with a realistic map of control, a rebuilt belief system, and an engine that runs without fuel</li>
+        </ul>
+        <details>
+          <summary>See the 8 modules</summary>
+          <ol>
+            <li>The Question of Control</li>
+            <li>The Psychology of Possibility</li>
+            <li>The Architecture of the Inner Mind</li>
+            <li>The Craft of Self-Belief</li>
+            <li>The Engine: Motivation, Willpower, Discipline, Consistency</li>
+            <li>The Art of Endurance</li>
+            <li>Grace, Luck, and the Uncontrollable</li>
+            <li>The Extreme Path: Integration</li>
+          </ol>
+        </details>
+        <div class="price-row"><span class="price">$49.9</span></div>
+        <a class="btn btn-primary" href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">Buy on Gumroad</a>
+      </div>
+
+      <!-- THE INEVITABLE SELF -->
+      <div class="card">
+        <span class="badge">Premium Course</span>
+        <h3>The Inevitable Self</h3>
+        <div class="tag">The Systematic Framework for Aligning Daily Action with Long-Term Growth</div>
+        <p class="desc">
+          A 5-module, 5-week digital course that replaces fragmented growth with one living dashboard —
+          the single coherent conversation with yourself. Kept for a lifetime.
+        </p>
+        <ul class="features">
+          <li>Five modules · five weeks · kept for a lifetime</li>
+          <li>The Compass — vision, anti-vision &amp; operational boundaries</li>
+          <li>The Targets — lead measures, pre-mortems &amp; if/then plans</li>
+          <li>Identity &amp; Habits — micro-evidence, two-minute rule, &ldquo;never miss twice&rdquo;</li>
+          <li>The Daily Engine — deep work &amp; the Minimum Viable Day</li>
+          <li>The Reflection Loop — daily, weekly &amp; monthly course correction</li>
+        </ul>
+        <details>
+          <summary>Bonus resources included</summary>
+          <ol>
+            <li>One-Page Dashboard Template</li>
+            <li>Anti-Vision Letter Workbook</li>
+            <li>Five-Dimension Horizon Worksheet</li>
+            <li>Balanced Goal Card</li>
+            <li>If/Then Playbook</li>
+            <li>Sunday Calibration Checklist</li>
+            <li>Monthly Compass Audit Guide</li>
+          </ol>
+        </details>
+        <!-- TODO: fill in the price for The Inevitable Self, e.g. <span class="price">$XX</span> -->
+        <div class="price-row"><span class="price">Price via Gumroad</span></div>
+        <a class="btn btn-primary" href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">Buy on Gumroad</a>
+      </div>
+
+      <!-- THE ARCHITECTURE OF THE INEVITABLE -->
+      <div class="card">
+        <span class="badge">Ebook &amp; Workbook</span>
+        <h3>The Architecture of the Inevitable</h3>
+        <div class="tag">Why Fragmented Systems Fail and How to Build a Life That Finishes</div>
+        <p class="desc">
+          The book that dismantles the fragmented approach — planners, apps, and notebooks scattered
+          across five systems — and replaces it with a single living dashboard: vision as foundation,
+          goals as architecture, habits as bricks, daily execution as mortar.
+        </p>
+        <ul class="features">
+          <li>Sixteen chapters plus a closing note, with workbook sections throughout</li>
+          <li>The Fragmented Trap &amp; The Living Dashboard</li>
+          <li>The Psychology of the Inevitable — from motivation to architecture</li>
+          <li>The Compass, the Anti-Vision &amp; goal calibration</li>
+          <li>Identity engineering, habit stacking &amp; the &ldquo;Swiss Cheese&rdquo; method</li>
+          <li>Daily execution engine, deep work architecture &amp; the iterative loop</li>
+        </ul>
+        <div class="price-row"><span class="price">$35</span></div>
+        <a class="btn btn-primary" href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">Buy on Gumroad</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section id="philosophy">
+  <div class="wrap phil-grid">
+    <div class="phil-copy">
+      <div class="eyebrow">The Philosophy</div>
+      <h2>No &ldquo;just believe in yourself.&rdquo;<br>No toxic positivity.<br>Only <em>architecture.</em></h2>
+      <p class="lead">
+        Fragmented systems fail. When your vision lives in a journal, your goals in an app, and your
+        habits in a widget, you aren&rsquo;t building a life — you&rsquo;re managing a collection of
+        disconnected tasks. Every tool switch costs cognitive momentum, and progress collapses under
+        the first demanding week.
+      </p>
+      <p>
+        True transformation is not about adding more tools. It is about centralization — one living
+        dashboard where a change in any area ripples through the rest. Where science exists, these
+        materials cite it; where philosophy exists, they name it. The transformation offered is from
+        motivated dreamer to honest, durable, self-knowing operator — someone who can pursue a brutal
+        goal for years without becoming delusional, bitter, or broken.
+      </p>
+    </div>
+    <ul class="phil-list">
+      <li><strong>Psychologically grounded</strong>Explains the mechanisms behind behavior — why beliefs fail, why discipline works, why endurance survives.</li>
+      <li><strong>Philosophically honest</strong>Faces luck, circumstance, and chance without lying to yourself about them.</li>
+      <li><strong>Evidence over slogans</strong>Belief follows evidence, not affirmations. Wins are the only currency the belief system accepts.</li>
+      <li><strong>Systems over strength</strong>Willpower is seed capital — invest it in systems, never in daily operations.</li>
+      <li><strong>Built to finish</strong>Endurance keeps the why fixed and the how fluid — until the outcome becomes inevitable.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before you start.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do I get access after purchase?</summary>
+        <p>All products are delivered instantly and securely through my Gumroad store —
+           <a href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener" style="color:var(--accent)">biniyamsafayo.gumroad.com</a>.
+           You purchase there, and your course or ebook is available immediately for download or online access.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which product should I start with?</summary>
+        <p>It depends on what you&rsquo;re looking for. If you want the complete psychological system —
+           an 8-module study of control, belief, discipline, endurance, and grace, with a workbook and
+           final project — start with <strong>The Extreme Path</strong>. If you want a systematic
+           5-week framework for aligning your daily routines with long-term growth, choose
+           <strong>The Inevitable Self</strong>. If you prefer to read and work at your own pace through
+           a book with built-in workbook sections, <strong>The Architecture of the Inevitable</strong>
+           is for you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this another motivation course?</summary>
+        <p>No. The materials explicitly are not motivation courses, collections of affirmations, or
+           promises that hard work guarantees success. They are psychologically grounded, philosophically
+           honest systems for pursuing difficult goals — with mechanisms named, science cited where it
+           exists, and exercises that carry the real work.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need extra tools or apps?</summary>
+        <p>No. One of the core diagnoses of these products is that fragmented systems fail. Everything
+           is designed to consolidate into a single living dashboard — a notebook, a digital document,
+           or the template provided — so you are not buying anything else to make them work.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does each course take?</summary>
+        <p><strong>The Extreme Path</strong> is designed for one module per week — eight weeks to the
+           complete system. <strong>The Inevitable Self</strong> runs five modules over five weeks and is
+           kept for a lifetime: the dashboard you build is meant to be used, updated, and refined for years.
+           <strong>The Architecture of the Inevitable</strong> is a book you work through at your own pace.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Stop starting. Start finishing.</h2>
+    <p>Every system you need — the psychology, the framework, the architecture — is one click away.
+       In one place, integrated, ready to be lived.</p>
+    <a class="btn btn-primary" href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">Visit the Gumroad Store</a>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand">Biniyam Safayo</div>
+    <p>Digital courses &amp; ebooks on the psychology and architecture of extraordinary achievement.</p>
+    <p>Store: <a href="https://biniyamsafayo.gumroad.com/" target="_blank" rel="noopener">biniyamsafayo.gumroad.com</a></p>
+    <p style="margin-top:10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">© 2026 Biniyam Safayo — All rights reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>
